@@ -1,0 +1,37 @@
+---
+import type { Language } from '../i18n';
+import { useTranslations } from '../i18n';
+
+interface Props {
+  lang: Language;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<section id="contact" class="contact-area pt-125 pb-130 gray-bg">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <div class="section-title text-center pb-25">
+          <h2 class="title">{t('contact.title')}</h2>
+          <p>{t('contact.desc')}</p>
+        </div>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-lg-4 col-md-6 col-sm-7">
+        <div class="contact-box text-center mt-30">
+          <div class="contact-icon">
+            <i class="lni-map-marker"></i>
+          </div>
+          <div class="contact-content">
+            <h6 class="contact-title">{t('contact.address')}</h6>
+            <p>{t('contact.address_val')}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

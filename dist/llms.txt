@@ -1,0 +1,14 @@
+# Michał Gazda — Software Engineer
+
+Personal page. Java, AWS, Kubernetes, software engineering.
+
+## Pages
+
+- Strona główna (PL): https://michalgazda.github.io/michal.gazda.info/
+- Home (EN): https://michalgazda.github.io/michal.gazda.info/en/
+
+## Basic info
+
+- Location: Krakow, Poland
+- LinkedIn: https://www.linkedin.com/in/michał-gazda-90877620/
+- GitHub: https://github.com/michalgazda

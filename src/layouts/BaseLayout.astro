@@ -1,0 +1,91 @@
+---
+import type { Language } from '../i18n';
+import { languages } from '../i18n';
+
+export interface Props {
+  title: string;
+  description: string;
+  lang: Language;
+}
+
+const { title, description, lang } = Astro.props;
+const base = import.meta.env.BASE_URL;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+const origin = Astro.site.origin;
+const alternateLang = lang === 'pl' ? 'en' : 'pl';
+const alternatePath = lang === 'pl' ? '/en/' : '/';
+---
+
+<!doctype html>
+<html lang={lang}>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" type="image/png" href={`${base}assets/images/favicon.png`} />
+
+  <title>{title}</title>
+  <meta name="description" content={description} />
+
+  <!-- Canonical & hreflang -->
+  <link rel="canonical" href={canonical} />
+  <link rel="alternate" hreflang="pl" href={`${origin}${base}`} />
+  <link rel="alternate" hreflang="en" href={`${origin}${base}en/`} />
+  <link rel="alternate" hreflang="x-default" href={`${origin}${base}`} />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Michał Gazda" />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:url" content={canonical} />
+  <meta property="og:locale" content={lang === 'pl' ? 'pl_PL' : 'en_US'} />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+
+  <!-- Schema.org -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Michał Gazda",
+    "description": description,
+    "url": origin + base,
+    "jobTitle": "Software Engineer",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Krakow",
+      "addressCountry": "PL"
+    },
+    "sameAs": [
+      "https://www.linkedin.com/in/michał-gazda-90877620/",
+      "https://github.com/michalgazda"
+    ]
+  })} />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href={`${base}assets/css/bootstrap.min.css`} />
+  <link rel="stylesheet" href={`${base}assets/css/LineIcons.css`} />
+  <link rel="stylesheet" href={`${base}assets/css/magnific-popup.css`} />
+  <link rel="stylesheet" href={`${base}assets/css/default.css`} />
+  <link rel="stylesheet" href={`${base}assets/css/style.css`} />
+</head>
+<body>
+  <slot />
+
+  <!-- Scripts -->
+  <script src={`${base}assets/js/vendor/modernizr-3.6.0.min.js`}></script>
+  <script src={`${base}assets/js/vendor/jquery-1.12.4.min.js`}></script>
+  <script src={`${base}assets/js/bootstrap.min.js`}></script>
+  <script src={`${base}assets/js/popper.min.js`}></script>
+  <script src={`${base}assets/js/jquery.magnific-popup.min.js`}></script>
+  <script src={`${base}assets/js/parallax.min.js`}></script>
+  <script src={`${base}assets/js/waypoints.min.js`}></script>
+  <script src={`${base}assets/js/jquery.counterup.min.js`}></script>
+  <script src={`${base}assets/js/jquery.appear.min.js`}></script>
+  <script src={`${base}assets/js/scrolling-nav.js`}></script>
+  <script src={`${base}assets/js/jquery.easing.min.js`}></script>
+  <script src={`${base}assets/js/main.js`}></script>
+</body>
+</html>
