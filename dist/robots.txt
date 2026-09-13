@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://michalgazda.github.io/michal.gazda.info/sitemap.xml
