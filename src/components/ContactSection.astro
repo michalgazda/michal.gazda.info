@@ -8,6 +8,7 @@ interface Props {
 
 const { lang } = Astro.props;
 const t = useTranslations(lang);
+const linkedinUrl = 'https://www.linkedin.com/in/micha%C5%82-gazda-90877620/';
 ---
 
 <section id="contact" class="contact-area pt-125 pb-130 gray-bg">
@@ -16,7 +17,7 @@ const t = useTranslations(lang);
       <div class="col-lg-8">
         <div class="section-title text-center pb-25">
           <h2 class="title">{t('contact.title')}</h2>
-          <p>{t('contact.desc')}</p>
+          <p>{t('contact.desc_before')} <a href={linkedinUrl} target="_blank" rel="noopener noreferrer" class="contact-linkedin">{t('contact.desc_link')}</a>{t('contact.desc_after')}</p>
         </div>
       </div>
     </div>
@@ -35,3 +36,16 @@ const t = useTranslations(lang);
     </div>
   </div>
 </section>
+
+<style>
+  .contact-linkedin {
+    color: #754ef9;
+    font-weight: 500;
+    -webkit-transition: all 0.3s ease-out 0s;
+    -moz-transition: all 0.3s ease-out 0s;
+    transition: all 0.3s ease-out 0s;
+  }
+  .contact-linkedin:hover {
+    color: #32333c;
+  }
+</style>
