@@ -98,6 +98,17 @@
   display: block;
 }
 
+/* Remove the violet frame/belt around the hero photo */
+.header-image::before,
+.header-image::after {
+  display: none !important;
+}
+
+.header-image {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
 @keyframes headerFadeIn {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
