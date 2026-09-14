@@ -66,26 +66,26 @@ const alternatePath = lang === 'pl' ? '/en/' : '/';
 
   <!-- CSS -->
   <link rel="stylesheet" href={`${base}assets/css/bootstrap.min.css`} />
-  <link rel="stylesheet" href={`${base}assets/css/LineIcons.css`} />
-  <link rel="stylesheet" href={`${base}assets/css/magnific-popup.css`} />
   <link rel="stylesheet" href={`${base}assets/css/default.css`} />
   <link rel="stylesheet" href={`${base}assets/css/style.css`} />
+  <link rel="stylesheet" href={`${base}assets/css/enhancements.css`} />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 </head>
 <body>
   <slot />
 
-  <!-- Scripts -->
-  <script src={`${base}assets/js/vendor/modernizr-3.6.0.min.js`}></script>
-  <script src={`${base}assets/js/vendor/jquery-1.12.4.min.js`}></script>
-  <script src={`${base}assets/js/bootstrap.min.js`}></script>
-  <script src={`${base}assets/js/popper.min.js`}></script>
-  <script src={`${base}assets/js/jquery.magnific-popup.min.js`}></script>
-  <script src={`${base}assets/js/parallax.min.js`}></script>
-  <script src={`${base}assets/js/waypoints.min.js`}></script>
-  <script src={`${base}assets/js/jquery.counterup.min.js`}></script>
-  <script src={`${base}assets/js/jquery.appear.min.js`}></script>
-  <script src={`${base}assets/js/scrolling-nav.js`}></script>
-  <script src={`${base}assets/js/jquery.easing.min.js`}></script>
-  <script src={`${base}assets/js/main.js`}></script>
+  <!-- Scripts — rendered as raw HTML to avoid Astro's script processing -->
+  <script is:inline src={`${base}assets/js/vendor/modernizr-3.6.0.min.js`}></script>
+  <script is:inline src={`${base}assets/js/vendor/jquery-1.12.4.min.js`}></script>
+  <script is:inline src={`${base}assets/js/bootstrap.min.js`}></script>
+  <script is:inline src={`${base}assets/js/popper.min.js`}></script>
+  <script is:inline src={`${base}assets/js/jquery.magnific-popup.min.js`}></script>
+  <script is:inline src={`${base}assets/js/parallax.min.js`}></script>
+  <script is:inline src={`${base}assets/js/waypoints.min.js`}></script>
+  <script is:inline src={`${base}assets/js/jquery.counterup.min.js`}></script>
+  <script is:inline src={`${base}assets/js/jquery.appear.min.js`}></script>
+  <script is:inline src={`${base}assets/js/scrolling-nav.js`}></script>
+  <script is:inline src={`${base}assets/js/jquery.easing.min.js`}></script>
+  <script is:inline src={`${base}assets/js/main.js`}></script>
 </body>
 </html>

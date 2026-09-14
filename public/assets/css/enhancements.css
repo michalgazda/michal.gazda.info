@@ -1,0 +1,115 @@
+/* ===== ENHANCEMENTS for gazda.info ===== */
+/* Fixes visual issues and modernizes the template */
+
+/* Better section spacing */
+.about-area {
+  padding-top: 100px !important;
+  padding-bottom: 100px !important;
+}
+
+.contact-area {
+  padding-top: 100px !important;
+  padding-bottom: 100px !important;
+}
+
+/* Section title improvements */
+.section-title {
+  margin-bottom: 20px;
+}
+
+.section-title .title {
+  font-weight: 700 !important;
+  position: relative;
+  padding-bottom: 25px !important;
+}
+
+.section-title .title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: #754ef9;
+  border-radius: 2px;
+}
+
+.section-title p {
+  margin-bottom: 0;
+  padding-top: 10px;
+}
+
+/* Footer improvements */
+.footer-widget {
+  padding-top: 80px !important;
+  padding-bottom: 80px !important;
+}
+
+.footer-content ul {
+  margin-top: 25px;
+}
+
+.footer-content ul li a {
+  width: 60px !important;
+  height: 60px !important;
+  line-height: 62px !important;
+  font-size: 26px !important;
+  transition: all 0.4s ease !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.footer-content ul li a:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 20px rgba(117, 78, 249, 0.3);
+}
+
+.footer-copyright .copyright-text p {
+  font-size: 14px;
+  color: #8a8fa3;
+}
+
+/* LinkedIn contact link */
+.contact-linkedin {
+  color: #754ef9;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.contact-linkedin:hover {
+  color: #32333c;
+  text-decoration: underline !important;
+}
+
+/* Header fade-in effect */
+.header-content {
+  opacity: 0;
+  animation: headerFadeIn 0.8s ease-out forwards;
+}
+
+@keyframes headerFadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Contact boxes - better hover */
+.contact-box {
+  transition: all 0.3s ease !important;
+}
+
+.contact-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Responsive footer icons */
+@media (max-width: 767px) {
+  .footer-content ul li a {
+    width: 50px !important;
+    height: 50px !important;
+    line-height: 52px !important;
+    font-size: 22px !important;
+  }
+}
